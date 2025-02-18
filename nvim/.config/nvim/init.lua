@@ -1,0 +1,2 @@
+print("Beth")
+require("mog")
