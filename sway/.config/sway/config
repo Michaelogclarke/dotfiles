@@ -1,3 +1,7 @@
+exec systemctl --user import-enviironment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+
 # Logo key. Use Mod1 for Alt.
 set $mod Mod1
 
@@ -21,7 +25,8 @@ font pango:"JetBrainsMono Nerd Font,JetBrainsMono NF:style=Bold 12"
 set $term kitty
 
 # Your preferred application launcher
-set $menu --no-startup-id rofi -show drun
+set $menu wofi --show drun 
+#--no-startup-id rofi -show drun
 
 # Lock Screen
 bindsym $mod+c exec --no-startup-id ~/.config/sway/swaylock.sh
