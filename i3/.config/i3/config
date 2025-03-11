@@ -11,6 +11,9 @@ set $sm HDMI-A-0
 exec --no-startup-id xrandr --output $mm --primary --mode 1920x1080 --rate 144
 exec --no-startup-id xrandr --output $sm --left-of DisplayPort-0 --mode 1920x1080 --rate 60
 
+
+bindsym $mod+Shift+s exec maim -s ~/Pictures/screenshot.png
+
 # Polybar
 exec_always --no-startup-id polybar toph
 
