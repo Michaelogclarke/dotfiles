@@ -1,2 +1,0 @@
-print("Beth")
-require("mog")
