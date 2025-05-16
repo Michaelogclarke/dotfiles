@@ -5,19 +5,17 @@
 # this file and re-run i3-config-wizard(1).
 
 # Monitor list
-set $m DisplayPort-0
+set $mm DisplayPort-0
 set $sm HDMI-A-0 
 # monitor layout
-exec --no-startup-id xrandr --output $m --primary --mode 1920x1080 --rate 143.98
-exec --no-startup-id xrandr --output $sm --left-of $m --mode 1920x1080 --rate 60
-# Emacs daemon
-exec --no-startup-id emacs --daemon
+exec --no-startup-id xrandr --output $mm --primary --mode 1920x1080 --rate 144
+exec --no-startup-id xrandr --output $sm --left-of DisplayPort-0 --mode 1920x1080 --rate 60
 
 
 bindsym $mod+Shift+s exec maim -s ~/Pictures/screenshot.png
-bindsym $mod+o exec --no-startup-id obsidian
 
-
+# Polybar
+exec_always --no-startup-id polybar toph
 
 # i3 wallpaper
 exec --no-startup-id feh --bg-scale /home/michaelogclarke/Downloads/skelly.jpg
@@ -132,11 +130,11 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-workspace 1 output $m
-workspace 2 output $m
-workspace 3 output $m
-workspace 4 output $m
-workspace 5 output $m
+workspace 1 output $mm
+workspace 2 output $mm
+workspace 3 output $mm
+workspace 4 output $mm
+workspace 5 output $mm
 workspace 6 output $sm
 workspace 7 output $sm
 workspace 8 output $sm
@@ -214,26 +212,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-for_window [class=".*"] border pixel 2
-for_window [class=".*"] title_window none
-
-client.focused #555555 #555555 #555555 #555555  
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-    status_command i3blocks
-    position top
-    font pango:monospace 10
-    workspace_buttons yes
-    colors {
-        background #1c1c1c  # Dark background
-        statusline #c5c8c6  # Soft gray text
-        separator #373b41  # Subtle separator
-        focused_workspace #282a36 #c5c8c6 #282a36  # Active workspace (Nice gray)
-        active_workspace #1c1c1c #888888 #1c1c1c  # Active but not focused (Mid-gray)
-        inactive_workspace #1c1c1c #444444 #1c1c1c  # Completely inactive (Dark gray)
-        urgent_workspace #ff5555 #ffffff #ff5555  # Urgent window
-    }
-}
+#bar {
+#        status_command i3status
+#        position top
+#}
 
-
+# Display
