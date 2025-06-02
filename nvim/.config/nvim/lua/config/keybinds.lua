@@ -53,6 +53,13 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
-
+-- nvim highligher
+ vim.cmd([[
+   let HiSet   = 'f<CR>'
+   let HiErase = 'f<BS>'
+   let HiClear = 'f<C-L>'
+   let HiFind  = 'f<Tab>'
+   let HiSetSL = 't<CR>'
+ ]])
 -- Git previews
 vim.keymap.set('n', '<leader>gh', ':Gitsigns preview_hunk<CR>')

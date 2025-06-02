@@ -2,6 +2,7 @@
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
+export EMACS=$(which emacs)
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -70,6 +71,13 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
+
+# -n tells `wal` to skip setting the wallpaper.
+
+# Using feh to tile the wallpaper now.
+# We grab the wallpaper location from wal's cache so 
+# that this works even when a directory is passed.
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
@@ -98,7 +106,13 @@ source $ZSH/oh-my-zsh.sh
 # - $ZSH_CUSTOM/aliases.zsh
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# custom alias's foo
+alias rebuild="sudo nixos-rebuild switch --flake /home/michaelogclarke/Mogs-flake#nixos && cd ~/Mogs-flake/ && git add .  "
+alias f="fish"
+alias ta="tmux attach"
+alias gs="git status"
+alias v="nvim"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

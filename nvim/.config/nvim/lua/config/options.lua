@@ -52,4 +52,4 @@ set.undofile = true
 set.incsearch = true
 
 -- faster cursor hold
-set.updatetime = 50
+set.updatetime = 100

@@ -29,5 +29,15 @@ return {
     },
  
     { "folke/snacks.nvim", opts = { dashboard = { enabled = false } } },
-
+    {
+        "chentoast/marks.nvim",
+        event = "VeryLazy",
+        opts = {},
+    },
+    {
+        "azabiong/vim-highlighter",
+        init = function()
+            -- settings
+        end,
+    },
 }
