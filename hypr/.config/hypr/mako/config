@@ -1,0 +1,12 @@
+STYLE OPTIONS
+
+    default-timeout = timeout
+        Set the default timeout to timeout in milliseconds.
+        To disable the timeout, set it to zero.
+
+        Default: 0
+
+    ignore-timeout = 0|1
+        If set, mako will ignore the expire timeout sent by notifications and use the one provided by default-timeout instead.
+
+        Default: 0
