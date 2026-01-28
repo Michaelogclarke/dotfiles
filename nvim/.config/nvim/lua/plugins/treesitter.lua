@@ -3,7 +3,7 @@ return {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         config = function()
-            local configs = require("nvim-treesitter.configs")
+            local configs = require("nvim-treesitter")
             configs.setup({
                 -- enable syntax highlighting
                 highlight = {
@@ -36,7 +36,7 @@ return {
                     "astro",
                 },
                 -- auto install above language parsers
-                auto_install = false,
+                auto_install = true,
             })
         end
     }
