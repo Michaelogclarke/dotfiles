@@ -27,7 +27,7 @@ return {
             require('gitsigns').setup()
         end
     },
- 
+
     { "folke/snacks.nvim", opts = { dashboard = { enabled = false } } },
     {
         "chentoast/marks.nvim",
@@ -39,5 +39,10 @@ return {
         init = function()
             -- settings
         end,
+    },
+    {
+        "pmizio/typescript-tools.nvim",
+        dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+        opts = {},
     },
 }
